@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour
     public float m_speed = 10.0f;
     Rigidbody2D m_Rigidbody;
     public float m_jumpPower = 10f;
-    private bool m_landed = true;
+    private bool m_landed = true, m_jumped = false;
     private bool m_buffer = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,11 +22,17 @@ public class Movement : MonoBehaviour
        
         m_Rigidbody.velocity = new Vector2(xMove * m_speed, m_Rigidbody.velocity.y);
 
-        if(Input.GetKey(KeyCode.Space) && m_landed)
+        if(Input.GetKey(KeyCode.Space) && m_landed && !m_jumped)
             {
             m_Rigidbody.AddForce(Vector2.up * m_jumpPower, ForceMode2D.Impulse);
             m_buffer = false;
+            m_jumped=true;
+            Debug.Log("jumped");
             }
+        else if(!Input.GetKey(KeyCode.Space))
+        {
+            m_jumped = false;
+        }
 
         if(m_buffer == true && m_landed == false)
         {
