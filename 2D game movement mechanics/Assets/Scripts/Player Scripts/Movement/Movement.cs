@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
         float yMove = Input.GetAxisRaw("vertical");
 
        
-        m_Rigidbody.linearVelocity = new Vector2(xMove * m_speed, m_Rigidbody.linearVelocity.y);
+        m_Rigidbody.velocity = new Vector2(xMove * m_speed, m_Rigidbody.velocity.y);
 
         if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && m_landed && !m_jumped)
             {
