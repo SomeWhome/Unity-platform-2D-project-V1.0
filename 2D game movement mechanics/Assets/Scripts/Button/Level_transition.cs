@@ -8,6 +8,11 @@ public class Level_transition : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        LevelProgress();
+    }
+
+    public void LevelProgress()
+    {
         level++;
         SceneManager.LoadScene(level);
         Debug.Log(level);
