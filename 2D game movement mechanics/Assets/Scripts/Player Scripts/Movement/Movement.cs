@@ -19,10 +19,11 @@ public class Movement : MonoBehaviour
         float xMove = Input.GetAxisRaw("horizontal");
         float yMove = Input.GetAxisRaw("vertical");
 
-       
-        m_Rigidbody.linearVelocity = new Vector2(xMove * m_speed, m_Rigidbody.linearVelocity.y);
 
-        if((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && m_landed && !m_jumped)
+        //m_Rigidbody.linearVelocity = new Vector2(xMove * m_speed, m_Rigidbody.linearVelocity.y);
+        m_Rigidbody.velocity = new Vector2(xMove * m_speed, m_Rigidbody.velocity.y);
+
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && m_landed && !m_jumped)
             {
             m_Rigidbody.AddForce(Vector2.up * m_jumpPower, ForceMode2D.Impulse);
             m_buffer = false;
