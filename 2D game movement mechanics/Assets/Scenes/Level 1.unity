@@ -576922,7 +576922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4236938209339235833, guid: 401462585d5be7a429a1c816c01e046e, type: 3}
       propertyPath: Alert.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OffPlatform
+      value: Offplatform
       objectReference: {fileID: 0}
     - target: {fileID: 4236938209339235833, guid: 401462585d5be7a429a1c816c01e046e, type: 3}
       propertyPath: Alert.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

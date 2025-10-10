@@ -39,7 +39,10 @@ public class Questionmanager : MonoBehaviour
         m_questionInput.SetActive(true);
     }
 
-  
+    public void Offplatform()
+    {
+
+    }
 //largeText.text = "Hi there!";
 
 private void PickRandomNumber(int maxint) 
