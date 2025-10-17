@@ -26,6 +26,8 @@ public class Coin : MonoBehaviour
             //destroy coin after collition
             Destroy(gameObject);
             Debug.Log("Coin Destroyed");
+
+
         }
     }
 }

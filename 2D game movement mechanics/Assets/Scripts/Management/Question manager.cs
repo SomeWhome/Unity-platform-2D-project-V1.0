@@ -25,7 +25,7 @@ public class Questionmanager : MonoBehaviour
     public int counter = 0; 
     public int lives = 3;
     public bool OnPlatform = false;
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         
         m_questionInput.SetActive(true);
@@ -36,11 +36,16 @@ public class Questionmanager : MonoBehaviour
 
         }
         
-        m_questionInput.SetActive(true);
+    
     }
 
     public void Offplatform()
     {
+       m_questionInput.SetActive(false);
+        Debug.Log("Question ended");
+        OnPlatform = false;
+        GotQuestion = false;
+        m_questionText.text = "";
 
     }
 //largeText.text = "Hi there!";
@@ -56,6 +61,8 @@ private void PickRandomNumber(int maxint)
         m_questionText.text = "what is " + num1 + " X " + num2 + "= ?";
         m_Correctanswer = (num1 * num2).ToString();
         GotQuestion = true;
+        Debug.Log(m_Correctanswer);
+        Debug.Log(m_questionText.ToString());
     }
     
     
@@ -67,6 +74,7 @@ private void PickRandomNumber(int maxint)
             GotQuestion = false;
             OnPlatform = true;
             Debug.Log("counter:"+ counter);
+            PickRandomNumber(12);
         }
         else
         {
