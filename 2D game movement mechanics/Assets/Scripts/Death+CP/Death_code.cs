@@ -1,8 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class Death_code: MonoBehaviour
 {
+    public bool destroyed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Vector2 Teleported_position;
     public float lives;
@@ -18,6 +20,20 @@ public class Death_code: MonoBehaviour
         {
             Teleported_position = collision.gameObject.transform.position;
             Destroy(collision.gameObject);
+            
+
+          
+        }
+
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy") && destroyed == false)
+        {
+            lives -= 1;
+            Debug.Log(lives);
         }
     }
 }
