@@ -20,12 +20,12 @@ public class Coin : MonoBehaviour
             if (score_Manager != null)
             {
                 score_Manager.AddScore(m_value);
-                Debug.Log("Collected coins");
+                
             }
 
             //destroy coin after collition
             Destroy(gameObject);
-            Debug.Log("Coin Destroyed");
+            
 
 
         }
