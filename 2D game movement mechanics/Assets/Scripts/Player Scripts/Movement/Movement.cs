@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Lader"))
         {
-            m_jumpPower = 12.67f;
+            m_jumpPower = 15f;
             Debug.Log("landed");
             m_landed = true;
             m_jumped = false;
