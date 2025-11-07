@@ -7,13 +7,13 @@ public class Death_code: MonoBehaviour
     public bool destroyed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Vector2 Teleported_position;
-    public float lives;
+    public float lives = 3;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Respawn"))
         {
             gameObject.transform.position = Teleported_position;
-            lives -= 1;
+            lives = 3;
         }
 
         if (collision.gameObject.CompareTag("Checkpoint"))
@@ -35,5 +35,17 @@ public class Death_code: MonoBehaviour
             lives -= 1;
             Debug.Log(lives);
         }
+    }
+
+    private void Update()
+    {
+        if (lives <= 0)
+        {
+            gameObject.transform.position = Teleported_position;
+            Debug.Log(lives);
+            lives = 3;
+
+        }
+        
     }
 }

@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
         
 
         if (collision.gameObject.CompareTag("Lader"))

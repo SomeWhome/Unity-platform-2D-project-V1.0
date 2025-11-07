@@ -5,30 +5,39 @@ using UnityEngine;
 using UnityEngine.InputSystem.Android;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 
 public class Questionmanager : MonoBehaviour
 {
     [SerializeField] private GameObject m_questionInput;
-
     public string m_question;
     public string m_Correctanswer;
     public Text m_questionText;
     private bool GotQuestion = false;
     private int m_currentQuestion;
-
+    public boss_fight m_Boss;
+    public Camerafollow m_cam;
     //public TMP_InputField m_questionInput;
-   
+    public Text m_Answer;
     static int level = 2;
     public int num1 = 0;
     public int num2 = 0;
     public int counter = 0; 
-    public int lives = 3;
     public bool OnPlatform = false;
+    public int remaning;
+    private void Start()
+    {
+        remaning = 20 - counter;
+        string text = remaning.ToString();
+        //m_Answer.text = "";
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+       
+        m_cam.ZoomOut();
         m_questionInput.SetActive(true);
+        m_Answer.text = ("Questions remaining :");
         OnPlatform = true;
         while (GotQuestion == false && OnPlatform == true )
         {
@@ -46,7 +55,7 @@ public class Questionmanager : MonoBehaviour
         OnPlatform = false;
         GotQuestion = false;
         m_questionText.text = "";
-
+        m_cam.ZoomIn();
     }
 //largeText.text = "Hi there!";
 
@@ -62,7 +71,7 @@ private void PickRandomNumber(int maxint)
         m_Correctanswer = (num1 * num2).ToString();
         GotQuestion = true;
         Debug.Log(m_Correctanswer);
-        Debug.Log(m_questionText.ToString());
+       
     }
     
     
@@ -75,13 +84,17 @@ private void PickRandomNumber(int maxint)
             OnPlatform = true;
             Debug.Log("counter:"+ counter);
             PickRandomNumber(12);
+            remaning = 20 - counter;
+            string left = remaning.ToString();
+            m_Answer.text = "Questions remaining;"+ left;
         }
         else
         {
-            lives -= 1;
+            Debug.Log("incorrect");
             GotQuestion = false;
-            Debug.Log("Lives:" +lives);
-            
+            OnPlatform = true;
+            PickRandomNumber(12);
+            m_Boss.AttackPlayer();
         
         }
        if(counter == 20)
