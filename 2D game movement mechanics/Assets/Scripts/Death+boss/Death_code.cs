@@ -1,9 +1,11 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Death_code: MonoBehaviour
 {
+    public Text TextLives;
     public bool destroyed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Vector2 Teleported_position;
@@ -39,6 +41,7 @@ public class Death_code: MonoBehaviour
 
     private void Update()
     {
+        TextLives.text = "lives : " + lives;
         if (lives <= 0)
         {
             gameObject.transform.position = Teleported_position;
