@@ -25,7 +25,6 @@ public class Movement : MonoBehaviour
 
         if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) && m_landed && !m_jumped)
             {
-            Debug.Log("jumped");
             m_Rigidbody.AddForce(Vector2.up * m_jumpPower, ForceMode2D.Impulse);
             m_buffer = false;
             m_jumped=true;
@@ -60,7 +59,6 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Lader"))
         {
             m_jumpPower = 15f;
-            Debug.Log("landed");
             m_landed = true;
             m_jumped = false;
         }
@@ -70,7 +68,6 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Lader"))
         {
             m_jumpPower = 175f;
-            Debug.Log("exit");
         }
     }
 }

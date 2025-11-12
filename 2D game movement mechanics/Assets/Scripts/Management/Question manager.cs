@@ -56,7 +56,6 @@ public class Questionmanager : MonoBehaviour
     {
         // if left platform turns off question system
        m_questionInput.SetActive(false);
-        Debug.Log("Question ended");
         OnPlatform = false;
         GotQuestion = false;
         m_questionText.text = "";
