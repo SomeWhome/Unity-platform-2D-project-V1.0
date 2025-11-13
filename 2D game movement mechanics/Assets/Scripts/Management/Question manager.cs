@@ -24,7 +24,7 @@ public class Questionmanager : MonoBehaviour
     static int level = 0;
     public int num1 = 0;
     public int num2 = 0;
-    public int counter = 0; 
+    public int counter = 0;
     public bool OnPlatform = false;
     public int remaning;
     private void Start()
@@ -37,34 +37,34 @@ public class Questionmanager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("triggered");
-       //zooms out the camera
+        //zooms out the camera
         m_cam.ZoomOut();
         //makes the input and question text visable 
         m_questionInput.SetActive(true);
         m_Answer.text = ("Questions remaining :");
         OnPlatform = true;
-        while (GotQuestion == false && OnPlatform == true )
+        while (GotQuestion == false && OnPlatform == true)
         {
             //prosidual generation of question
             PickRandomNumber(12);
 
         }
-        
-    
+
+
     }
 
     public void Offplatform()
     {
         // if left platform turns off question system
-       m_questionInput.SetActive(false);
+        m_questionInput.SetActive(false);
         OnPlatform = false;
         GotQuestion = false;
         m_questionText.text = "";
         m_cam.ZoomIn();
     }
-//largeText.text = "Hi there!";
+    //largeText.text = "Hi there!";
 
-    private void PickRandomNumber(int maxint) 
+    private void PickRandomNumber(int maxint)
     {
         //prosidual generation
         int randomNum = Random.Range(1, maxint + 1);
@@ -77,10 +77,10 @@ public class Questionmanager : MonoBehaviour
         m_Correctanswer = (num1 * num2).ToString();
         GotQuestion = true;
         Debug.Log(m_Correctanswer);
-       
+
     }
-    
-    
+
+
     public void GetInputText(string userInput)
     {
         //when question answered
@@ -93,7 +93,7 @@ public class Questionmanager : MonoBehaviour
             PickRandomNumber(12);
             remaning = 20 - counter;
             string left = remaning.ToString();
-            m_Answer.text = "Questions remaining;"+ left;
+            m_Answer.text = "Questions remaining;" + left;
         }
         else
         {
@@ -102,21 +102,15 @@ public class Questionmanager : MonoBehaviour
             OnPlatform = true;
             PickRandomNumber(12);
             m_Boss.AttackPlayer();
-        
+
         }
-       if(counter >= 20)
+        if (counter >= 20)
         {
             //increases level when 20 questions answer correctly 
             level++;
             SceneManager.LoadScene(level);
 
         }
-    
+
     }
 }
-
-
-    
-
-    
-
