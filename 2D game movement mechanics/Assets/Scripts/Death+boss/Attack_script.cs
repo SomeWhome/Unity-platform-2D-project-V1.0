@@ -11,7 +11,7 @@ public class Attack_script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = player.transform.position;
+        target = new Vector3(player.transform.position.x, player.transform.position.y +2f, player.transform.position.z);
     }
 
      void Update()

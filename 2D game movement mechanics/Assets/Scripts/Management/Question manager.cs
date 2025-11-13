@@ -21,7 +21,7 @@ public class Questionmanager : MonoBehaviour
     public Camerafollow m_cam;
     //public TMP_InputField m_questionInput;
     public Text m_Answer;
-    static int level = 2;
+    static int level = 0;
     public int num1 = 0;
     public int num2 = 0;
     public int counter = 0; 
@@ -36,6 +36,7 @@ public class Questionmanager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("triggered");
        //zooms out the camera
         m_cam.ZoomOut();
         //makes the input and question text visable 
@@ -63,7 +64,7 @@ public class Questionmanager : MonoBehaviour
     }
 //largeText.text = "Hi there!";
 
-private void PickRandomNumber(int maxint) 
+    private void PickRandomNumber(int maxint) 
     {
         //prosidual generation
         int randomNum = Random.Range(1, maxint + 1);
@@ -94,6 +95,7 @@ private void PickRandomNumber(int maxint)
             remaning = 20 - counter;
             string left = remaning.ToString();
             m_Answer.text = "Questions remaining;"+ left;
+            Debug.Log(counter);
         }
         else
         {
@@ -105,7 +107,7 @@ private void PickRandomNumber(int maxint)
             m_Boss.AttackPlayer();
         
         }
-       if(counter == 20)
+       if(counter >= 20)
         {
             //increases level when 20 questions answer correctly 
             level++;

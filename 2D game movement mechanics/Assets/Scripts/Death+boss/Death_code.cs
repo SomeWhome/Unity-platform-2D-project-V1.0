@@ -11,6 +11,7 @@ public class Death_code: MonoBehaviour
     public Vector2 Teleported_position;
     public float lives = 3;
     public Vector2 Teleporter;
+    public GameObject Questionmanager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Respawn"))
@@ -51,7 +52,8 @@ public class Death_code: MonoBehaviour
         {
             gameObject.transform.position = Teleported_position;
             lives = 3;
-
+            Questionmanager.GetComponent<Questionmanager>().Offplatform();
+            Questionmanager.SetActive(true);
         }
         
     }

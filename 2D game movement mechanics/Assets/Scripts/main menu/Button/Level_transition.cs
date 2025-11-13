@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Level_transition : MonoBehaviour
 {
-    static int level = 0;
+    static int level = -1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
