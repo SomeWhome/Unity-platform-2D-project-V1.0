@@ -15,6 +15,5 @@ public class Level_transition : MonoBehaviour
     {
         level++;
         SceneManager.LoadScene(level);
-        Debug.Log(level);
     }
 }

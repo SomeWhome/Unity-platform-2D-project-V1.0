@@ -90,17 +90,14 @@ public class Questionmanager : MonoBehaviour
             counter += 1;
             GotQuestion = false;
             OnPlatform = true;
-            Debug.Log("counter:"+ counter);
             PickRandomNumber(12);
             remaning = 20 - counter;
             string left = remaning.ToString();
             m_Answer.text = "Questions remaining;"+ left;
-            Debug.Log(counter);
         }
         else
         {
             //if wrong
-            Debug.Log("incorrect");
             GotQuestion = false;
             OnPlatform = true;
             PickRandomNumber(12);
@@ -112,7 +109,6 @@ public class Questionmanager : MonoBehaviour
             //increases level when 20 questions answer correctly 
             level++;
             SceneManager.LoadScene(level);
-            Debug.Log(level);
 
         }
     
