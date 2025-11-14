@@ -4,16 +4,33 @@ using UnityEngine.SceneManagement;
 
 public class Level_transition : MonoBehaviour
 {
-    static int level = -1;
+    public static int LevelToLoad = 0;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        LevelProgress();
-    }
+    
 
     public void LevelProgress()
     {
-        level++;
-        SceneManager.LoadScene(level);
+      
+        if(LevelToLoad == 0)
+        {
+            SceneManager.LoadScene("level 1 (MIM)");
+            LevelToLoad = 1;
+        }
+        else if (LevelToLoad == 1)
+        {
+            SceneManager.LoadScene("Level 2");
+            LevelToLoad = 2;
+        }
+        else if (LevelToLoad == 2)
+        {
+            SceneManager.LoadScene("Credits");
+            LevelToLoad = 3;
+        }
+        else
+        {
+            SceneManager.LoadScene("MM 2.0");
+            LevelToLoad = 0;
+        }
     }
 }
+

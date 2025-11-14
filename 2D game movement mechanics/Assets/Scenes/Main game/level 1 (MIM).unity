@@ -19535,10 +19535,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 682235279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 571, y: 196.78}
-  m_SizeDelta: {x: 272.6611, y: 77.8}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -242, y: -60.72}
+  m_SizeDelta: {x: 272.66113, y: 77.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413392852
 MonoBehaviour:
@@ -19652,7 +19652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4275435559262578161, guid: 2000ecb52e68608499579d7fa5320853, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4486106311422741559, guid: 2000ecb52e68608499579d7fa5320853, type: 3}
       propertyPath: m_Name
@@ -19660,7 +19660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4486106311422741559, guid: 2000ecb52e68608499579d7fa5320853, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Respawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20148,10 +20148,17 @@ PrefabInstance:
       propertyPath: m_questionInput
       value: 
       objectReference: {fileID: 758942650}
+    - target: {fileID: 4718252855476906393, guid: 60e48e1de437b254e90812fa70cb8942, type: 3}
+      propertyPath: level_Transition
+      value: 
+      objectReference: {fileID: 1748505408}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2009347824272516211, guid: 60e48e1de437b254e90812fa70cb8942, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1748505408}
   m_SourcePrefab: {fileID: 100100000, guid: 60e48e1de437b254e90812fa70cb8942, type: 3}
 --- !u!114 &1748505406 stripped
 MonoBehaviour:
@@ -20169,6 +20176,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2009347824272516211, guid: 60e48e1de437b254e90812fa70cb8942, type: 3}
   m_PrefabInstance: {fileID: 1748505405}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1748505408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748505407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f324ddf176a1901489763095aabec769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1775303699
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class Questionmanager : MonoBehaviour
     //creating variables
     [SerializeField] private GameObject m_questionInput;
     public string m_question;
+    public Level_transition level_Transition;
     public string m_Correctanswer;
     public Text m_questionText;
     private bool GotQuestion = false;
@@ -93,7 +94,7 @@ public class Questionmanager : MonoBehaviour
             PickRandomNumber(12);
             remaning = 20 - counter;
             string left = remaning.ToString();
-            m_Answer.text = "Questions remaining;" + left;
+            m_Answer.text = "Questions remaining: " + left;
         }
         else
         {
@@ -104,11 +105,10 @@ public class Questionmanager : MonoBehaviour
             m_Boss.AttackPlayer();
 
         }
-        if (counter >= 20)
+        if (counter == 20)
         {
+            level_Transition.LevelProgress();
             //increases level when 20 questions answer correctly 
-            level++;
-            SceneManager.LoadScene(level);
 
         }
 
